@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-serif: 'Libre Baskerville';
+  --font-sans: 'DM Sans';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #1A1714;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HubSpot form overrides — forces embedded form to match our design */
+.hs-form fieldset {
+  max-width: 100% !important;
+}
+.hs-form .hs-input {
+  width: 100% !important;
+  background: #F7F5F2 !important;
+  border: 1px solid #E5E0D8 !important;
+  border-radius: 4px !important;
+  color: #1A1714 !important;
+  padding: 0.75rem 1rem !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 0.75rem !important;
+  transition: border-color 0.2s !important;
+}
+.hs-form .hs-input:focus {
+  outline: none !important;
+  border-color: #C4622D !important;
+}
+.hs-form label {
+  color: #7A6F65 !important;
+  font-size: 0.72rem !important;
+  font-family: var(--font-sans) !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 0.35rem !important;
+  display: block !important;
+}
+.hs-form .hs-button {
+  width: 100% !important;
+  background: #C4622D !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 0.9rem !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  margin-top: 0.5rem !important;
+  transition: background 0.2s !important;
+}
+.hs-form .hs-button:hover {
+  background: #A84F22 !important;
+}
+.hs-error-msgs {
+  color: #C4622D !important;
+  font-size: 0.72rem !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 0.5rem !important;
+}
+
+/* Dot-grid background */
+.dot-grid {
+  background-image: radial-gradient(circle, #d1d5db 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Text highlight marker */
+.highlight-marker {
+  background-color: #c7d2fe;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #1e1b4b;
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
