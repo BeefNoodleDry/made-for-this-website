@@ -1,5 +1,6 @@
 import Nav from "@/components/ui/Nav";
 import JourneyMap from "@/components/ui/JourneyMap";
+import HubSpotForm from "@/components/ui/HubSpotForm";
 
 // ─────────────────────────────────────────────
 // STAT CARD
@@ -250,16 +251,11 @@ export default function Home() {
                 </div>
               ════════════════════════════════════════
             */}
-            <div className="w-full aspect-[3/4] bg-gray-100 rounded-sm flex items-center justify-center border border-dashed border-gray-200">
-              <div className="text-center text-muted text-sm font-light px-8">
-                <div className="text-3xl mb-3 opacity-30">◎</div>
-                Add your photo or video here
-                <br />
-                <span className="text-xs opacity-60">
-                  See comment above for instructions
-                </span>
-              </div>
-            </div>
+            <img
+              src="/richie.jpg"
+              alt="Richie Dharma"
+              className="w-full aspect-[3/4] object-cover object-top rounded-sm"
+            />
 
             {/* Badge */}
             <div className="absolute -bottom-4 -right-4 md:-right-6 bg-accent text-white px-5 py-3.5 rounded-sm text-xs font-medium leading-snug">
@@ -580,19 +576,7 @@ export default function Home() {
               overrides to style the form to match.
               ════════════════════════════════════════
             */}
-            <div id="hubspot-form-embed">
-
-              {/* ── PLACEHOLDER — remove once HubSpot embed is added ── */}
-              <div className="border border-dashed border-gray-200 rounded-sm p-8 text-center text-muted text-sm font-light">
-                <div className="text-2xl mb-2 opacity-30">✦</div>
-                HubSpot form embed goes here
-                <br />
-                <span className="text-xs opacity-50">
-                  See comment above for instructions
-                </span>
-              </div>
-
-            </div>
+            <HubSpotForm />
 
             <p className="text-xs text-muted text-center mt-4 font-light">
               No commitment required. No spam. Just opportunity.
