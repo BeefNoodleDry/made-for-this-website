@@ -133,13 +133,13 @@ export default function Home() {
             </h1>
 
             <p className="text-lg md:text-xl text-muted font-light leading-relaxed max-w-xl mb-8">
-              You&apos;re a VA, coordinator, or analyst — skilled, hardworking,
+              You&apos;re a VA, coordinator, or analyst. Skilled, hardworking,
               and stuck behind the scenes.{" "}
               <strong className="text-ink font-medium">
                 CRM Project Management
               </strong>{" "}
               is the career path you didn&apos;t know existed. The person who
-              runs the system every business depends on — using HubSpot, the
+              runs the system every business depends on, using HubSpot, the
               world&apos;s most adopted CRM. Until now, nobody showed you the door.
             </p>
 
@@ -201,7 +201,7 @@ export default function Home() {
 
             <div className="flex flex-col gap-4">
               <ProblemCard
-                title="You're capable — but invisible"
+                title="You're capable but invisible"
                 body="You coordinate, analyse, support, and execute. But you're always behind the scenes. The client never knows your name."
               />
               <ProblemCard
@@ -210,7 +210,7 @@ export default function Home() {
               />
               <ProblemCard
                 title="The opportunity was never shown to you"
-                body="HubSpot PM is one of the most in-demand, highest-paid remote roles in the world right now — and most people in your position have never heard of it."
+                body="HubSpot PM is one of the most in-demand, highest-paid remote roles in the world right now. Most people in your position have never heard of it."
               />
             </div>
           </div>
@@ -286,7 +286,7 @@ export default function Home() {
 
             <p className="text-sm text-muted font-light leading-relaxed mb-4">
               I moved to Australia from Southeast Asia seven years ago. Ambitious,
-              hungry — and quietly terrified I wasn&apos;t enough. I got a sales
+              hungry and quietly terrified I wasn&apos;t enough. I got a sales
               job. I wasn&apos;t very good at it.
             </p>
             <p className="text-sm text-muted font-light leading-relaxed mb-4">
@@ -295,12 +295,11 @@ export default function Home() {
                 HubSpot. I&apos;d never heard of it.
               </strong>{" "}
               I picked it up fast. Overnight, I became the most important person
-              in the business. The CRM is the heart and brain of a company — and
-              nobody was watching it.
+              in the business. The CRM is the heart and brain of a company. Nobody was watching it.
             </p>
             <p className="text-sm text-muted font-light leading-relaxed mb-8">
               Four years later, I&apos;m Head of HubSpot at a Diamond agency in
-              Australia — the top 1% of HubSpot&apos;s global partner network.{" "}
+              Australia, the top 1% of HubSpot&apos;s global partner network.{" "}
               <strong className="text-ink font-medium">
                 I&apos;m building this course because I see myself in you.
               </strong>{" "}
@@ -308,10 +307,10 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col gap-3 pt-6 border-t border-gray-100">
-              <Credential text="Head of HubSpot — Diamond Partner Agency, Australia (top 1% globally)" />
+              <Credential text="Head of HubSpot at Diamond Partner Agency, Australia (top 1% globally)" />
               <Credential text="Led global HubSpot consolidations across multiple industries" />
-              <Credential text="Actively hiring HubSpot PMs — I know exactly what employers want" />
-              <Credential text="Southeast Asian migrant — I've lived the path I'm teaching" />
+              <Credential text="Actively hiring HubSpot PMs. I know exactly what employers want." />
+              <Credential text="Southeast Asian migrant. I've lived the path I'm teaching." />
             </div>
           </div>
         </div>
@@ -344,19 +343,19 @@ export default function Home() {
               <PlanStep
                 num="01"
                 title="Discover the opportunity"
-                body="Understand what CRM systems are, why they matter, and why the HubSpot Project Manager role is one of the most in-demand, highest-paid remote positions available to Southeast Asians right now — and why almost nobody knows it exists."
+                body="Understand what CRM systems are, why they matter, and why the HubSpot Project Manager role is one of the most in-demand, highest-paid remote positions available to Southeast Asians right now. Almost nobody knows it exists yet."
               />
               <div className="w-px h-6 bg-gray-100 ml-14" />
               <PlanStep
                 num="02"
                 title="Learn the system"
-                body="Master HubSpot and CRM operations from the ground up — the way an employer actually needs you to. Not just the features, but the frameworks, client communication, project ownership, and systems thinking that makes you irreplaceable."
+                body="Master HubSpot and CRM operations from the ground up, the way an employer actually needs you to. Not just the features, but the frameworks, client communication, project ownership, and systems thinking that makes you irreplaceable."
               />
               <div className="w-px h-6 bg-gray-100 ml-14" />
               <PlanStep
                 num="03"
                 title="Get the role"
-                body="Land your first CRM Project Manager position with confidence — backed by real skills, a practical portfolio, and guidance from someone who is actively hiring for this exact role right now."
+                body="Land your first CRM Project Manager position with confidence, backed by real skills, a practical portfolio, and guidance from someone who is actively hiring for this exact role right now."
               />
             </div>
           </div>
@@ -390,8 +389,8 @@ export default function Home() {
             <div>
               <p className="text-sm text-muted font-light leading-relaxed">
                 After Made For This, you don&apos;t just understand HubSpot or CRM systems.
-                You become the person a manager turns to when something needs to get done —
-                the conduit between every team, every tool, every vendor. The one who
+                You become the person a manager turns to when something needs to get done.
+                The conduit between every team, every tool, every vendor. The one who
                 owns the outcome, talks to the client, and holds the whole system together.
                 That person has a title. A salary. And is in serious demand right now.
               </p>
@@ -407,7 +406,7 @@ export default function Home() {
             <TransformationCard
               icon="🗺️"
               title="Build a Customer Journey Map from scratch"
-              body="Design how a customer moves through a business — from first touch to loyal client — and map that entire journey inside a CRM system."
+              body="Design how a customer moves through a business, from first touch to loyal client, and map that entire journey inside a CRM system."
             />
             <TransformationCard
               icon="🔗"
@@ -422,7 +421,7 @@ export default function Home() {
             <TransformationCard
               icon="🧠"
               title="Diagnose and fix broken systems"
-              body="Audit a CRM that isn&apos;t working, identify exactly what&apos;s wrong, and build a clear plan to fix it — in language a founder can understand."
+              body="Audit a CRM that isn&apos;t working, identify exactly what&apos;s wrong, and build a clear plan to fix it in language a founder can understand."
             />
             <TransformationCard
               icon="📈"
@@ -435,11 +434,11 @@ export default function Home() {
           <div className="mt-12 border-t border-gray-100 pt-10 max-w-2xl">
             <p className="font-serif text-xl md:text-2xl font-bold text-ink leading-snug">
               &ldquo;This isn&apos;t a HubSpot course. It&apos;s a course on how to
-              become the most valuable person in any room that runs on a CRM system —
-              and right now, that&apos;s almost every room.&rdquo;
+              become the most valuable person in any room that runs on a CRM system.
+              And right now, that&apos;s almost every room.&rdquo;
             </p>
             <p className="text-sm text-muted font-light mt-4">
-              — Richie Dharma, Head of HubSpot · Diamond Partner Agency · Australia
+              Richie Dharma, Head of HubSpot · Diamond Partner Agency · Australia
             </p>
           </div>
         </div>
@@ -467,7 +466,7 @@ export default function Home() {
                 "Invisible to the clients who need you most",
                 "A ceiling that never moves no matter how hard you work",
                 "Watching others step into roles you were built for",
-                "The opportunity passes — someone else takes the seat",
+                "The opportunity passes. Someone else takes the seat.",
               ].map((item) => (
                 <div
                   key={item}
@@ -493,10 +492,10 @@ export default function Home() {
             </h3>
             <div className="flex flex-col gap-3">
               {[
-                "The client knows your name — and asks for you specifically",
+                "The client knows your name and asks for you specifically",
                 "3–4× the income of a general VA role",
                 "A clear career path with real room to grow into leadership",
-                "The most valuable person in the room — you run the system",
+                "The most valuable person in the room. You run the system.",
               ].map((item) => (
                 <div
                   key={item}
@@ -532,15 +531,15 @@ export default function Home() {
             <p className="text-sm text-muted font-light leading-relaxed mb-6">
               Register your interest in the Made For This founding cohort.
               Limited seats. Real skills. A career path that was always waiting
-              for you — you just needed someone to show you the door.
+              for you. You just needed someone to show you the door.
             </p>
 
             <div className="flex flex-col gap-2.5">
               {[
                 "No prior HubSpot experience needed",
                 "Taught by someone actively hiring for this role",
-                "Southeast Asian community — you belong here",
-                "Founding cohort pricing — lowest it will ever be",
+                "Southeast Asian community. You belong here.",
+                "Founding cohort pricing. The lowest it will ever be.",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2.5 text-sm text-muted font-light">
                   <span className="text-accent font-medium">✓</span>
@@ -559,7 +558,7 @@ export default function Home() {
               Register your interest
             </h3>
             <p className="text-sm text-muted font-light mb-6 leading-relaxed">
-              Be first to know when Made For This opens. No spam — just the
+              Be first to know when Made For This opens. No spam, just the
               information you need, when you need it.
             </p>
 
