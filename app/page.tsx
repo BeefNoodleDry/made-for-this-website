@@ -281,24 +281,26 @@ export default function Home() {
             </div>
 
             <h2 className="font-serif text-4xl font-bold leading-tight tracking-tight mb-6">
-              I didn&apos;t feel{" "}
+              I didn&apos;t feel like I was{" "}
               <span className="italic text-accent">made for this</span> either.
               <br />
               Then everything changed.
             </h2>
 
             <p className="text-sm text-muted font-light leading-relaxed mb-4">
-              I moved to Australia from Southeast Asia seven years ago. Ambitious,
-              hungry and quietly terrified I wasn&apos;t enough. I got a sales
-              job. I wasn&apos;t very good at it.
+              I moved to Australia from Southeast Asia 10 years ago. I was ambitious
+              and hungry, but deep down I was terrified that I wasn&apos;t good enough.
+              Things here were unfamiliar. I managed to land my first job in sales, and
+              frankly, I wasn&apos;t very good at it.
             </p>
             <p className="text-sm text-muted font-light leading-relaxed mb-4">
-              In desperation, I started learning the company&apos;s CRM.{" "}
+              In a last act of desperation, I started learning the company&apos;s CRM.{" "}
               <strong className="text-ink font-medium">
-                HubSpot. I&apos;d never heard of it.
+                HubSpot. I&apos;d never heard of it,
               </strong>{" "}
-              I picked it up fast. Overnight, I became the most important person
-              in the business. The CRM is the heart and brain of a company. Nobody was watching it.
+              but I picked it up fast. Overnight, I became the most important person
+              in the business. The CRM is the heart and brain of a company, and at
+              that time, nobody was paying attention.
             </p>
             <p className="text-sm text-muted font-light leading-relaxed mb-8">
               Four years later, I&apos;m Head of HubSpot at a Diamond agency in
@@ -306,7 +308,8 @@ export default function Home() {
               <strong className="text-ink font-medium">
                 I&apos;m building this course because I see myself in you.
               </strong>{" "}
-              And I know, with everything I have, that it&apos;s our time.
+              And I know, with everything I have learned and foresee for the future,
+              that it&apos;s our time.
             </p>
 
             <div className="flex flex-col gap-3 pt-6 border-t border-gray-100">
