@@ -33,10 +33,12 @@ function ProblemCard({
   body: string;
 }) {
   return (
-    <div className="border border-gray-100 rounded-sm p-6 bg-white hover:border-accent/30 transition-colors group">
-      <div className="w-1 h-6 bg-accent mb-4 group-hover:h-8 transition-all duration-300" />
-      <div className="text-sm font-medium text-ink mb-2">{title}</div>
-      <div className="text-sm text-muted font-light leading-relaxed">{body}</div>
+    <div className="flex gap-4 py-5 border-b border-gray-100 last:border-b-0">
+      <div className="w-1 flex-shrink-0 bg-accent rounded-full mt-1" />
+      <div>
+        <h3 className="font-serif text-lg font-bold text-ink mb-1.5 leading-snug">{title}</h3>
+        <p className="text-sm text-muted font-light leading-relaxed">{body}</p>
+      </div>
     </div>
   );
 }
@@ -192,10 +194,9 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="font-serif text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-0">
-                You&apos;re doing the work.
+                You&apos;re already doing the work.
                 <br />
-                Someone else is{" "}
-                <span className="italic text-accent">getting paid for it.</span>
+                <span className="italic text-accent">Just behind the scenes.</span>
               </h2>
             </div>
 
