@@ -382,10 +382,8 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-end mb-14">
             <div>
               <h2 className="font-serif text-4xl md:text-5xl font-bold leading-tight tracking-tight">
-                This is what{" "}
-                <span className="italic text-accent">
-                  irreplaceable
-                </span>{" "}
+                This is what being{" "}
+                <span className="italic text-accent">irreplaceable</span>{" "}
                 actually looks like.
               </h2>
             </div>
