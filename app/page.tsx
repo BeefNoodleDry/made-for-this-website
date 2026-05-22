@@ -33,11 +33,13 @@ function ProblemCard({
   body: string;
 }) {
   return (
-    <div className="flex gap-4 py-5 border-b border-gray-100 last:border-b-0">
-      <div className="w-1 flex-shrink-0 bg-accent rounded-full mt-1" />
-      <div>
-        <h3 className="font-serif text-lg font-bold text-ink mb-1.5 leading-snug">{title}</h3>
-        <p className="text-sm text-muted font-light leading-relaxed">{body}</p>
+    <div className="border border-gray-100 rounded-sm p-6 bg-white hover:border-accent/30 transition-colors group">
+      <div className="flex gap-4">
+        <div className="w-1 flex-shrink-0 bg-accent group-hover:bg-accent mt-1 transition-all duration-300 group-hover:h-full rounded-full" style={{minHeight: '1.5rem'}} />
+        <div>
+          <h3 className="font-serif text-lg font-bold text-ink mb-1.5 leading-snug">{title}</h3>
+          <p className="text-sm text-muted font-light leading-relaxed">{body}</p>
+        </div>
       </div>
     </div>
   );
