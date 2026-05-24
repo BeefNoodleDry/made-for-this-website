@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Nav from "@/components/ui/Nav";
 import JourneyMap from "@/components/ui/JourneyMap";
 import HubSpotForm from "@/components/ui/HubSpotForm";
@@ -254,11 +255,16 @@ export default function Home() {
                 </div>
               ════════════════════════════════════════
             */}
-            <img
-              src="/richie.jpg"
-              alt="Richie Dharma"
-              className="w-full aspect-[3/4] object-cover object-top rounded-sm"
-            />
+            <div className="relative w-full aspect-[3/4]">
+              <Image
+                src="/richie.jpg"
+                alt="Richie Dharma"
+                fill
+                className="object-cover object-top rounded-sm"
+                quality={90}
+                priority
+              />
+            </div>
 
             {/* Badge */}
             <div className="absolute -bottom-4 -right-4 md:-right-6 bg-accent text-white px-5 py-3.5 rounded-sm text-xs font-medium leading-snug">
