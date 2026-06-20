@@ -110,7 +110,7 @@ export default function TestPage() {
       </nav>
 
       {/* ═══ HERO ═══ */}
-      <section className="px-8 md:px-16 pt-24 pb-20 max-w-5xl mx-auto">
+      <section className="px-8 md:px-16 pt-24 pb-20">
         <div style={{ color: C.gold, letterSpacing: "0.14em" }} className="text-xs uppercase font-medium mb-6 flex items-center gap-3">
           <span style={{ color: C.gold }}>✦</span> A course by Richie Dharma
         </div>
