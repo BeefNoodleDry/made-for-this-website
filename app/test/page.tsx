@@ -251,19 +251,19 @@ export default function TestPage() {
 
           {/* Photo */}
           <div className="relative">
-            <div style={{ background: "#232323", aspectRatio: "3/4" }} className="w-full overflow-hidden relative">
+            <div style={{ background: "#232323", aspectRatio: "1/1" }} className="w-full overflow-hidden relative">
               <Image
                 src="/richie.jpg"
                 alt="Richie Dharma"
                 fill
-                className="object-cover object-top"
-                style={{ filter: "grayscale(20%)" }}
+                className="object-cover"
+                style={{ filter: "grayscale(20%)", objectPosition: "50% 65%" }}
                 quality={90}
                 priority
               />
             </div>
             <div
-              style={{ background: C.red, bottom: "-16px", right: "-16px" }}
+              style={{ background: C.red, bottom: "0", right: "0" }}
               className="absolute px-5 py-3.5 text-xs font-medium leading-snug"
             >
               <div style={{ fontFamily: "var(--font-serif)", color: C.offWhite }} className="text-base font-bold tracking-tight mb-0.5">
