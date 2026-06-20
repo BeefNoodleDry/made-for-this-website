@@ -97,7 +97,7 @@ export default function TestPage() {
 
       {/* ═══ NAV ═══ */}
       <nav className="px-8 md:px-16 py-5 flex items-center justify-between border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
-        <div style={{ color: C.gold, fontFamily: "var(--font-serif)", letterSpacing: "0.04em" }} className="text-base font-bold">
+        <div style={{ color: C.gold, fontFamily: "var(--font-serif)", letterSpacing: "0.04em" }} className="text-sm md:text-base font-bold whitespace-nowrap">
           MADE FOR THIS
         </div>
         <a
@@ -429,10 +429,10 @@ export default function TestPage() {
 
       {/* ═══ FOOTER ═══ */}
       <footer style={{ borderTop: `1px solid rgba(255,255,255,0.08)` }} className="px-8 md:px-16 py-6 flex items-center justify-between">
-        <div style={{ color: C.gold, fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }} className="text-base font-bold">
+        <div style={{ color: C.gold, fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }} className="text-base font-bold whitespace-nowrap">
           MADE FOR THIS
         </div>
-        <div style={{ color: C.grey, letterSpacing: "0.08em" }} className="text-xs uppercase">
+        <div style={{ color: C.grey, letterSpacing: "0.08em" }} className="text-xs uppercase text-right">
           © 2026 Richie Dharma. All rights reserved.
         </div>
       </footer>
