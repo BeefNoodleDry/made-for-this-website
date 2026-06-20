@@ -1,4 +1,5 @@
 import HubSpotForm from "@/components/ui/HubSpotForm";
+import Image from "next/image";
 
 // ─────────────────────────────────────────────
 // DESIGN SYSTEM — MadeForThis_DesignPrinciples.md
@@ -250,12 +251,15 @@ export default function TestPage() {
 
           {/* Photo */}
           <div className="relative">
-            <div style={{ background: "#232323", aspectRatio: "3/4" }} className="w-full overflow-hidden">
-              <img
+            <div style={{ background: "#232323", aspectRatio: "3/4" }} className="w-full overflow-hidden relative">
+              <Image
                 src="/richie.jpg"
                 alt="Richie Dharma"
-                className="w-full h-full object-cover object-top"
+                fill
+                className="object-cover object-top"
                 style={{ filter: "grayscale(20%)" }}
+                quality={90}
+                priority
               />
             </div>
             <div
