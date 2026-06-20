@@ -251,7 +251,7 @@ export default function TestPage() {
 
           {/* Photo */}
           <div className="relative">
-            <div style={{ background: "#232323", aspectRatio: "1/1" }} className="w-full overflow-hidden relative">
+            <div style={{ background: "#232323", aspectRatio: "4/5" }} className="w-full overflow-hidden relative">
               <Image
                 src="/richie.jpg"
                 alt="Richie Dharma"
