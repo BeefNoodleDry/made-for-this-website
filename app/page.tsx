@@ -1,45 +1,67 @@
-import Image from "next/image";
-import Nav from "@/components/ui/Nav";
-import JourneyMap from "@/components/ui/JourneyMap";
 import HubSpotForm from "@/components/ui/HubSpotForm";
+import Image from "next/image";
+
+// ─────────────────────────────────────────────
+// DESIGN SYSTEM — MadeForThis_DesignPrinciples.md
+// Background: #1A1A1A | Headlines: #CC0000 | Body: #F0F0F0
+// Accent/Gold: #C9A84C | Card surface: #F5F0E8 | Muted: #7A7A7A
+// ─────────────────────────────────────────────
+
+const C = {
+  bg: "#1A1A1A",
+  bgAlt: "#111124",
+  red: "#CC0000",
+  offWhite: "#F0F0F0",
+  gold: "#C9A84C",
+  goldLight: "#E8C97A",
+  grey: "#7A7A7A",
+  cream: "#F5F0E8",
+  yellow: "#F5E97A",
+};
 
 // ─────────────────────────────────────────────
 // STAT CARD
 // ─────────────────────────────────────────────
-function StatCard({
-  num,
-  label,
-}: {
-  num: string;
-  label: string;
-}) {
+function StatCard({ num, label }: { num: string; label: string }) {
   return (
-    <div className="border border-gray-100 rounded-sm px-5 py-4 bg-white">
-      <div className="font-serif text-2xl font-bold text-ink leading-none mb-1">
+    <div
+      style={{
+        borderColor: "rgba(201,168,76,0.2)",
+        background: "rgba(255,255,255,0.03)",
+      }}
+      className="border rounded-none p-6"
+    >
+      <div
+        style={{ color: C.red, fontFamily: "var(--font-serif)", letterSpacing: "-0.02em" }}
+        className="text-3xl font-black leading-none mb-2"
+      >
         {num}
       </div>
-      <div className="text-xs text-muted leading-snug font-light">{label}</div>
+      <div style={{ color: C.grey, letterSpacing: "0.08em" }} className="text-xs font-light leading-snug uppercase">
+        {label}
+      </div>
     </div>
   );
 }
 
 // ─────────────────────────────────────────────
-// PROBLEM CARD
+// NUMBERED INSIGHT
 // ─────────────────────────────────────────────
-function ProblemCard({
-  title,
-  body,
-}: {
-  title: string;
-  body: string;
-}) {
+function Insight({ num, title, body }: { num: string; title: string; body: string }) {
   return (
-    <div className="border border-gray-100 rounded-sm p-6 bg-white hover:border-accent/30 transition-colors group">
-      <div className="flex gap-4">
-        <div className="w-1 flex-shrink-0 bg-accent group-hover:bg-accent mt-1 transition-all duration-300 group-hover:h-full rounded-full" style={{minHeight: '1.5rem'}} />
-        <div>
-          <h3 className="font-serif text-lg font-bold text-ink mb-1.5 leading-snug">{title}</h3>
-          <p className="text-sm text-muted font-light leading-relaxed">{body}</p>
+    <div className="flex gap-6">
+      <div
+        style={{ color: C.red, fontFamily: "var(--font-serif)", lineHeight: 1 }}
+        className="text-5xl font-black flex-shrink-0 w-12"
+      >
+        {num}
+      </div>
+      <div className="pt-1">
+        <div style={{ color: C.offWhite }} className="font-semibold text-base mb-2 leading-snug">
+          {title}
+        </div>
+        <div style={{ color: C.grey, letterSpacing: "0.06em" }} className="text-sm font-light leading-relaxed">
+          {body}
         </div>
       </div>
     </div>
@@ -47,59 +69,21 @@ function ProblemCard({
 }
 
 // ─────────────────────────────────────────────
-// TRANSFORMATION CARD
+// CALLOUT CARD
 // ─────────────────────────────────────────────
-function TransformationCard({
-  icon,
-  title,
-  body,
-}: {
-  icon: string;
-  title: string;
-  body: string;
-}) {
+function CalloutCard({ title, body }: { title: string; body: string }) {
   return (
-    <div className="bg-white border border-gray-100 rounded-sm p-5 hover:border-accent/30 hover:shadow-sm transition-all group">
-      <div className="text-xl mb-3">{icon}</div>
-      <div className="text-sm font-medium text-ink mb-1.5 leading-snug">{title}</div>
-      <div className="text-xs text-muted font-light leading-relaxed">{body}</div>
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────
-// PLAN STEP
-// ─────────────────────────────────────────────
-function PlanStep({
-  num,
-  title,
-  body,
-}: {
-  num: string;
-  title: string;
-  body: string;
-}) {
-  return (
-    <div className="flex gap-5">
-      <div className="font-serif text-5xl font-black text-accent/15 leading-none flex-shrink-0 w-12">
-        {num}
+    <div
+      style={{ borderColor: "rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.03)" }}
+      className="border p-6"
+    >
+      <div className="flex items-start gap-3 mb-3">
+        <span style={{ color: C.red }} className="text-lg font-black leading-none mt-0.5">→</span>
+        <div style={{ color: C.offWhite }} className="font-semibold text-sm leading-snug">{title}</div>
       </div>
-      <div className="pt-1">
-        <div className="text-sm font-medium text-ink mb-1.5">{title}</div>
-        <div className="text-sm text-muted font-light leading-relaxed">{body}</div>
+      <div style={{ color: C.grey, letterSpacing: "0.06em" }} className="text-sm font-light leading-relaxed pl-6">
+        {body}
       </div>
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────
-// CREDENTIAL ROW
-// ─────────────────────────────────────────────
-function Credential({ text }: { text: string }) {
-  return (
-    <div className="flex items-start gap-3 text-sm text-muted font-light">
-      <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
-      {text}
     </div>
   );
 }
@@ -109,367 +93,231 @@ function Credential({ text }: { text: string }) {
 // ─────────────────────────────────────────────
 export default function Home() {
   return (
-    <main className="bg-white text-ink overflow-x-hidden">
-      <Nav />
+    <main style={{ background: C.bg, color: C.offWhite }} className="overflow-x-hidden">
 
-      {/* ═══════════════════════════════════
-          HERO — Character + Map Visual
-          StoryBrand: The ICP is the hero.
-          The map makes the journey visible.
-      ════════════════════════════════════ */}
-      <section className="min-h-screen pt-24 pb-0 px-6 md:px-10 flex flex-col">
-        <div className="max-w-6xl mx-auto w-full flex-1 flex flex-col">
+      {/* ═══ NAV ═══ */}
+      <nav className="px-8 md:px-16 py-5 flex items-center justify-between border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+        <div style={{ color: C.gold, fontFamily: "var(--font-serif)", letterSpacing: "0.04em" }} className="text-sm md:text-base font-bold whitespace-nowrap">
+          MADE FOR THIS
+        </div>
+        <a
+          href="#register"
+          style={{ background: C.red, color: C.offWhite, letterSpacing: "0.12em" }}
+          className="text-xs font-semibold uppercase px-6 py-2.5 hover:opacity-90 transition-opacity"
+        >
+          Register Interest
+        </a>
+      </nav>
 
-          {/* Top text block */}
-          <div className="pt-12 md:pt-20 max-w-3xl">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="w-6 h-px bg-accent" />
-              <span className="text-xs font-medium tracking-widest uppercase text-accent">
-                A course by Richie Dharma
-              </span>
-            </div>
+      {/* ═══ HERO ═══ */}
+      <section className="px-8 md:px-16 pt-24 pb-20">
+        <div style={{ color: C.gold, letterSpacing: "0.14em" }} className="text-xs uppercase font-medium mb-6 flex items-center gap-3">
+          <span style={{ color: C.gold }}>✦</span> A course by Richie Dharma
+        </div>
 
-            <h1 className="font-serif text-5xl md:text-7xl font-black leading-[1.0] tracking-tight mb-6">
-              You were always{" "}
-              <span className="italic text-accent">capable.</span>
-              <br />
-              Now it&apos;s time{" "}
-              <span className="italic">to be seen.</span>
-            </h1>
+        <h1
+          style={{ color: C.red, fontFamily: "var(--font-serif)", letterSpacing: "-0.02em", lineHeight: 0.95 }}
+          className="text-6xl md:text-8xl font-black uppercase mb-8"
+        >
+          You were<br />
+          always<br />
+          <span style={{ color: C.offWhite }}>capable.</span>
+        </h1>
 
-            <p className="text-lg md:text-xl text-muted font-light leading-relaxed max-w-xl mb-8">
-              You&apos;re a VA, coordinator, or analyst. Skilled, hardworking,
-              and stuck behind the scenes.{" "}
-              <strong className="text-ink font-medium">
-                CRM Project Management
-              </strong>{" "}
-              is the career path you didn&apos;t know existed. The person who
-              runs the system every business depends on, using HubSpot, the
-              world&apos;s most adopted CRM. Until now, nobody showed you the door.
-            </p>
+        <p style={{ color: C.offWhite, letterSpacing: "0.07em", maxWidth: "540px" }} className="text-base font-light leading-relaxed mb-10">
+          You're a VA, coordinator, or analyst. Skilled, hardworking, and stuck behind the scenes.
+          CRM Project Management is the career path you didn't know existed.
+          Until now, nobody showed you the door.
+        </p>
 
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="#register"
-                className="text-xs font-medium tracking-widest uppercase text-white bg-ink px-7 py-3.5 rounded-sm hover:bg-accent transition-colors duration-200"
-              >
-                Register Your Interest
-              </a>
-              <a
-                href="#guide"
-                className="text-xs font-medium tracking-widest uppercase text-ink border border-gray-200 px-7 py-3.5 rounded-sm hover:border-accent hover:text-accent transition-colors duration-200"
-              >
-                Richie&apos;s Story
-              </a>
-            </div>
-          </div>
-
-          {/* Journey Map — scroll animated */}
-          <div className="mt-10 md:mt-12 -mx-6 md:-mx-10">
-            <JourneyMap />
-          </div>
+        <div className="flex flex-wrap gap-4">
+          <a
+            href="#register"
+            style={{ background: C.red, color: C.offWhite, letterSpacing: "0.12em" }}
+            className="text-xs font-semibold uppercase px-8 py-4 hover:opacity-90 transition-opacity"
+          >
+            Register Your Interest
+          </a>
+          <a
+            href="#guide"
+            style={{ borderColor: "rgba(255,255,255,0.2)", color: C.offWhite, letterSpacing: "0.12em" }}
+            className="border text-xs font-semibold uppercase px-8 py-4 hover:border-white/50 transition-colors"
+          >
+            Richie's Story
+          </a>
         </div>
       </section>
 
-      {/* Stats strip */}
-      <div className="border-y border-gray-100 bg-surface py-8 px-6 md:px-10">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+      {/* ═══ STATS ═══ */}
+      <section className="px-8 md:px-16 pb-20">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3">
           <StatCard num="3–4×" label="Income increase vs general VA roles" />
           <StatCard num="288K+" label="Companies globally running HubSpot" />
           <StatCard num="50–70%" label="Of CRM projects fail without a skilled PM" />
           <StatCard num="Top 1%" label="Richie's agency in HubSpot's global network" />
         </div>
-      </div>
+      </section>
 
-      {/* ═══════════════════════════════════
-          PROBLEM — StoryBrand Step 2
-          External, internal, philosophical
-      ════════════════════════════════════ */}
-      <section className="py-24 px-6 md:px-10 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="w-6 h-px bg-accent" />
-            <span className="text-xs font-medium tracking-widest uppercase text-accent">
-              The problem
+      {/* ═══ PULL QUOTE ═══ */}
+      <section style={{ background: C.bgAlt, borderTop: `1px solid rgba(255,255,255,0.06)`, borderBottom: `1px solid rgba(255,255,255,0.06)` }} className="px-8 md:px-16 py-20">
+        <div className="max-w-3xl mx-auto">
+          <div style={{ color: C.red, fontFamily: "var(--font-serif)" }} className="text-7xl font-black leading-none mb-6">"</div>
+          <p style={{ color: C.offWhite, fontFamily: "var(--font-serif)", lineHeight: 1.2 }} className="text-3xl md:text-4xl font-bold mb-2">
+            You were never behind.{" "}
+            <span style={{ background: C.yellow, color: "#1A1A1A", padding: "0 6px" }}>
+              You were just never shown the door.
             </span>
+          </p>
+          <p style={{ color: C.grey, letterSpacing: "0.12em" }} className="text-xs uppercase mt-6">
+            — Richie Dharma
+          </p>
+        </div>
+      </section>
+
+      {/* ═══ PROBLEM ═══ */}
+      <section className="px-8 md:px-16 py-24">
+        <div className="max-w-5xl mx-auto">
+          <div style={{ color: C.gold, letterSpacing: "0.14em" }} className="text-xs uppercase font-medium mb-4 flex items-center gap-3">
+            <span>✦</span> The problem
           </div>
+          <h2 style={{ color: C.red, fontFamily: "var(--font-serif)", letterSpacing: "-0.01em" }} className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+            You're already doing the work.
+          </h2>
+          <p style={{ color: C.grey, letterSpacing: "0.06em" }} className="text-sm font-light mb-16 max-w-md leading-relaxed">
+            Just behind the scenes.
+          </p>
 
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div>
-              <h2 className="font-serif text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-0">
-                You&apos;re already doing the work.
-                <br />
-                <span className="italic text-accent">Just behind the scenes.</span>
-              </h2>
-            </div>
-
-            <div className="flex flex-col gap-4">
-              <ProblemCard
-                title="You're capable but invisible"
-                body="You coordinate, analyse, support, and execute. But you're always behind the scenes. The client never knows your name."
-              />
-              <ProblemCard
-                title="There's no clear path forward"
-                body="Your current role has a ceiling everyone knows about. More effort doesn't mean more income. You're running on a treadmill."
-              />
-              <ProblemCard
-                title="The opportunity was never shown to you"
-                body="HubSpot PM is one of the most in-demand, highest-paid remote roles in the world right now. Most people in your position have never heard of it."
-              />
-            </div>
+          <div className="grid md:grid-cols-3 gap-4">
+            <CalloutCard
+              title="You're capable but invisible"
+              body="You coordinate, analyse, support, and execute. But you're always behind the scenes. The client never knows your name."
+            />
+            <CalloutCard
+              title="There's no clear path forward"
+              body="Your current role has a ceiling everyone knows about. More effort doesn't mean more income. You're running on a treadmill."
+            />
+            <CalloutCard
+              title="The opportunity was never shown to you"
+              body="HubSpot PM is one of the most in-demand, highest-paid remote roles in the world right now. Most people in your position have never heard of it."
+            />
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════
-          GUIDE — StoryBrand Step 3
-          Richie. Empathy first. Then authority.
-      ════════════════════════════════════ */}
+      {/* ═══ GUIDE ═══ */}
       <section
         id="guide"
-        className="py-24 px-6 md:px-10 bg-surface border-y border-gray-100"
+        style={{ background: C.bgAlt, borderTop: `1px solid rgba(255,255,255,0.06)`, borderBottom: `1px solid rgba(255,255,255,0.06)` }}
+        className="px-8 md:px-16 py-24"
       >
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <div style={{ color: C.gold, letterSpacing: "0.14em" }} className="text-xs uppercase font-medium mb-6 flex items-center gap-3">
+              <span>✦</span> Your guide
+            </div>
+            <h2 style={{ color: C.red, fontFamily: "var(--font-serif)", letterSpacing: "-0.01em" }} className="text-4xl font-bold leading-tight mb-8">
+              I didn't feel like I was made for this either.
+              <br />
+              <span style={{ color: C.offWhite }}>Then everything changed.</span>
+            </h2>
+            <p style={{ color: C.grey, letterSpacing: "0.06em" }} className="text-sm font-light leading-relaxed mb-4">
+              I moved to Australia from Southeast Asia 10 years ago. I was ambitious and hungry, but deep down I was terrified that I wasn't good enough. Things here were unfamiliar. I managed to land my first job in sales, and frankly, I wasn't very good at it.
+            </p>
+            <p style={{ color: C.grey, letterSpacing: "0.06em" }} className="text-sm font-light leading-relaxed mb-4">
+              In a last act of desperation, I started learning the company's CRM.{" "}
+              <strong style={{ color: C.offWhite }}>HubSpot. I'd never heard of it,</strong>{" "}
+              but I picked it up fast. Overnight, I became the most important person in the business. The CRM is the heart and brain of a company, and at that time, nobody was paying attention.
+            </p>
+            <p style={{ color: C.grey, letterSpacing: "0.06em" }} className="text-sm font-light leading-relaxed mb-10">
+              Four years later, I'm Head of HubSpot at a Diamond agency in Australia, the top 1% of HubSpot's global partner network.{" "}
+              <strong style={{ color: C.offWhite }}>I'm building this course because I see myself in you.</strong>{" "}
+              And I know, with everything I have learned and foresee for the future, that it's our time.
+            </p>
 
-          {/* Photo / video placeholder */}
-          <div className="relative">
-            {/*
-              ════════════════════════════════════════
-              RICHIE — ADD YOUR PHOTO OR VIDEO HERE
-              ════════════════════════════════════════
-              Option A (photo):
-                Replace the placeholder div below with:
-                <img
-                  src="/richie.jpg"
-                  alt="Richie Dharma"
-                  className="w-full aspect-[3/4] object-cover rounded-sm"
-                />
-
-              Option B (YouTube or Loom):
-                <div className="relative w-full aspect-[3/4]">
-                  <iframe
-                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                    className="absolute inset-0 w-full h-full rounded-sm"
-                    allowFullScreen
-                  />
+            <div className="flex flex-col gap-3" style={{ borderTop: `1px solid rgba(255,255,255,0.08)`, paddingTop: "24px" }}>
+              {[
+                "Head of HubSpot at Diamond Partner Agency, Australia (top 1% globally)",
+                "Led global HubSpot consolidations across multiple industries",
+                "Actively hiring HubSpot PMs. I know exactly what employers want.",
+                "Southeast Asian migrant. I've lived the path I'm teaching.",
+              ].map((text) => (
+                <div key={text} className="flex items-start gap-3 text-sm font-light" style={{ color: C.grey, letterSpacing: "0.05em" }}>
+                  <span style={{ color: C.gold }} className="mt-0.5 flex-shrink-0">✦</span>
+                  {text}
                 </div>
-              ════════════════════════════════════════
-            */}
-            <div className="relative w-full aspect-[3/4]">
+              ))}
+            </div>
+          </div>
+
+          {/* Photo */}
+          <div className="relative">
+            <div style={{ background: "#232323", aspectRatio: "4/5" }} className="w-full overflow-hidden relative">
               <Image
                 src="/richie.jpg"
                 alt="Richie Dharma"
                 fill
-                className="object-cover object-top rounded-sm"
+                className="object-cover"
+                style={{ filter: "grayscale(20%)", objectPosition: "50% 65%" }}
                 quality={90}
                 priority
               />
             </div>
-
-            {/* Badge */}
-            <div className="absolute -bottom-4 -right-4 md:-right-6 bg-accent text-white px-5 py-3.5 rounded-sm text-xs font-medium leading-snug">
-              <div className="font-serif text-base font-bold tracking-tight mb-0.5">
+            <div
+              style={{ background: C.red, bottom: "0", right: "0" }}
+              className="absolute px-5 py-3.5 text-xs font-medium leading-snug"
+            >
+              <div style={{ fontFamily: "var(--font-serif)", color: C.offWhite }} className="text-base font-bold tracking-tight mb-0.5">
                 Richie Dharma
               </div>
-              Head of HubSpot
-              <br />
-              Diamond Agency · Australia
-            </div>
-          </div>
-
-          {/* Content */}
-          <div className="pt-4">
-            <div className="flex items-center gap-3 mb-5">
-              <span className="w-6 h-px bg-accent" />
-              <span className="text-xs font-medium tracking-widest uppercase text-accent">
-                Your guide
-              </span>
-            </div>
-
-            <h2 className="font-serif text-4xl font-bold leading-tight tracking-tight mb-6">
-              I didn&apos;t feel like I was{" "}
-              <span className="italic text-accent">made for this</span> either.
-              <br />
-              Then everything changed.
-            </h2>
-
-            <p className="text-sm text-muted font-light leading-relaxed mb-4">
-              I moved to Australia from Southeast Asia 10 years ago. I was ambitious
-              and hungry, but deep down I was terrified that I wasn&apos;t good enough.
-              Things here were unfamiliar. I managed to land my first job in sales, and
-              frankly, I wasn&apos;t very good at it.
-            </p>
-            <p className="text-sm text-muted font-light leading-relaxed mb-4">
-              In a last act of desperation, I started learning the company&apos;s CRM.{" "}
-              <strong className="text-ink font-medium">
-                HubSpot. I&apos;d never heard of it,
-              </strong>{" "}
-              but I picked it up fast. Overnight, I became the most important person
-              in the business. The CRM is the heart and brain of a company, and at
-              that time, nobody was paying attention.
-            </p>
-            <p className="text-sm text-muted font-light leading-relaxed mb-8">
-              Four years later, I&apos;m Head of HubSpot at a Diamond agency in
-              Australia, the top 1% of HubSpot&apos;s global partner network.{" "}
-              <strong className="text-ink font-medium">
-                I&apos;m building this course because I see myself in you.
-              </strong>{" "}
-              And I know, with everything I have learned and foresee for the future,
-              that it&apos;s our time.
-            </p>
-
-            <div className="flex flex-col gap-3 pt-6 border-t border-gray-100">
-              <Credential text="Head of HubSpot at Diamond Partner Agency, Australia (top 1% globally)" />
-              <Credential text="Led global HubSpot consolidations across multiple industries" />
-              <Credential text="Actively hiring HubSpot PMs. I know exactly what employers want." />
-              <Credential text="Southeast Asian migrant. I've lived the path I'm teaching." />
+              <div style={{ color: "rgba(255,255,255,0.7)", letterSpacing: "0.06em" }} className="text-xs">
+                Head of HubSpot · Diamond Agency · Australia
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════
-          PLAN — StoryBrand Step 4
-          Three steps. Make it feel possible.
-      ════════════════════════════════════ */}
-      <section className="py-24 px-6 md:px-10 bg-white">
+      {/* ═══ PLAN ═══ */}
+      <section className="px-8 md:px-16 py-24">
         <div className="max-w-5xl mx-auto">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="w-6 h-px bg-accent" />
-            <span className="text-xs font-medium tracking-widest uppercase text-accent">
-              The plan
-            </span>
+          <div style={{ color: C.gold, letterSpacing: "0.14em" }} className="text-xs uppercase font-medium mb-4 flex items-center gap-3">
+            <span>✦</span> The plan
           </div>
+          <h2 style={{ color: C.red, fontFamily: "var(--font-serif)", letterSpacing: "-0.01em" }} className="text-4xl md:text-5xl font-bold mb-16 leading-tight max-w-2xl">
+            Three steps to becoming the systems person every business needs.
+          </h2>
 
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div>
-              <h2 className="font-serif text-4xl md:text-5xl font-bold leading-tight tracking-tight">
-                Three steps to becoming the{" "}
-                <span className="italic text-accent">
-                  systems person every business needs
-                </span>
-              </h2>
-            </div>
-
-            <div className="flex flex-col gap-8">
-              <PlanStep
-                num="01"
-                title="Discover the opportunity"
-                body="Understand what CRM systems are, why they matter, and why the HubSpot Project Manager role is one of the most in-demand, highest-paid remote positions available to Southeast Asians right now. Almost nobody knows it exists yet."
-              />
-              <div className="w-px h-6 bg-gray-100 ml-14" />
-              <PlanStep
-                num="02"
-                title="Learn the system"
-                body="Master HubSpot and CRM operations from the ground up, the way an employer actually needs you to. Not just the features, but the frameworks, client communication, project ownership, and systems thinking that makes you irreplaceable."
-              />
-              <div className="w-px h-6 bg-gray-100 ml-14" />
-              <PlanStep
-                num="03"
-                title="Get the role"
-                body="Land your first CRM Project Manager position with confidence, backed by real skills, a practical portfolio, and guidance from someone who is actively hiring for this exact role right now."
-              />
-            </div>
+          <div className="flex flex-col gap-12">
+            <Insight
+              num="01"
+              title="Discover the opportunity"
+              body="Understand what CRM systems are, why they matter, and why the HubSpot Project Manager role is one of the most in-demand, highest-paid remote positions available to Southeast Asians right now. Almost nobody knows it exists yet."
+            />
+            <div style={{ borderTop: `1px solid rgba(255,255,255,0.06)` }} />
+            <Insight
+              num="02"
+              title="Learn the system"
+              body="Master HubSpot and CRM operations from the ground up, the way an employer actually needs you to. Not just the features, but the frameworks, client communication, project ownership, and systems thinking that makes you irreplaceable."
+            />
+            <div style={{ borderTop: `1px solid rgba(255,255,255,0.06)` }} />
+            <Insight
+              num="03"
+              title="Get the role"
+              body="Land your first CRM Project Manager position with confidence, backed by real skills, a practical portfolio, and guidance from someone who is actively hiring for this exact role right now."
+            />
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════
-          TRANSFORMATION — What you'll be able to do
-          Added per user feedback: make the after state
-          specific and vivid, not just implied.
-      ════════════════════════════════════ */}
-      <section className="py-24 px-6 md:px-10 bg-surface border-y border-gray-100">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="w-6 h-px bg-accent" />
-            <span className="text-xs font-medium tracking-widest uppercase text-accent">
-              The after
-            </span>
-          </div>
+      {/* ═══ BEFORE / AFTER ═══ */}
+      <section style={{ background: C.bgAlt, borderTop: `1px solid rgba(255,255,255,0.06)`, borderBottom: `1px solid rgba(255,255,255,0.06)` }} className="px-8 md:px-16 py-24">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
 
-          <div className="grid md:grid-cols-2 gap-12 items-end mb-14">
-            <div>
-              <h2 className="font-serif text-4xl md:text-5xl font-bold leading-tight tracking-tight">
-                This is what being{" "}
-                <span className="italic text-accent">irreplaceable</span>{" "}
-                actually looks like.
-              </h2>
-            </div>
-            <div>
-              <p className="text-sm text-muted font-light leading-relaxed">
-                After Made For This, you don&apos;t just understand HubSpot or CRM systems.
-                You become the person a manager turns to when something needs to get done.
-                The conduit between every team, every tool, every vendor. The one who
-                owns the outcome, talks to the client, and holds the whole system together.
-                That person has a title. A salary. And is in serious demand right now.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <TransformationCard
-              icon="🎯"
-              title="Show up to client calls and run them"
-              body="Walk into a kickoff, a project review, or a scope conversation with confidence. You lead it. You set the agenda. You close with clear next steps."
-            />
-            <TransformationCard
-              icon="🗺️"
-              title="Build a Customer Journey Map from scratch"
-              body="Design how a customer moves through a business, from first touch to loyal client, and map that entire journey inside a CRM system."
-            />
-            <TransformationCard
-              icon="🔗"
-              title="Be the bridge between every team"
-              body="Sit between sales, marketing, operations, and the vendor team. Translate between them. Own the process that connects them all."
-            />
-            <TransformationCard
-              icon="🛡️"
-              title="Handle scope creep without flinching"
-              body="Recognise when a project is growing beyond its boundaries, have the conversation, reset expectations, and keep the engagement on track."
-            />
-            <TransformationCard
-              icon="🧠"
-              title="Diagnose and fix broken systems"
-              body="Audit a CRM that isn&apos;t working, identify exactly what&apos;s wrong, and build a clear plan to fix it in language a founder can understand."
-            />
-            <TransformationCard
-              icon="📈"
-              title="Become the person managers rely on"
-              body="Not the person who waits for instructions. The one who gets called when it&apos;s complicated, when it matters, when it has to get done right."
-            />
-          </div>
-
-          {/* Richie's voice — the bottom line */}
-          <div className="mt-12 border-t border-gray-100 pt-10 max-w-2xl">
-            <p className="font-serif text-xl md:text-2xl font-bold text-ink leading-snug">
-              &ldquo;This isn&apos;t a HubSpot course. It&apos;s a course on how to
-              become the most valuable person in any room that runs on a CRM system.
-              And right now, that&apos;s almost every room.&rdquo;
-            </p>
-            <p className="text-sm text-muted font-light mt-4">
-              Richie Dharma, Head of HubSpot · Diamond Partner Agency · Australia
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════
-          STAKES — StoryBrand Step 6 & 7
-          Failure vs Success
-      ════════════════════════════════════ */}
-      <section className="py-16 px-6 md:px-10 bg-ink">
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
-
-          {/* Failure */}
-          <div>
-            <div className="text-xs font-medium tracking-widest uppercase text-white/30 mb-4">
-              If you do nothing
-            </div>
-            <h3 className="font-serif text-2xl font-bold text-white/40 line-through decoration-accent/40 mb-5 leading-tight">
-              Still behind the scenes.
-              <br />
-              Still underpaid.
+          {/* Before */}
+          <div style={{ background: C.cream }} className="p-8">
+            <div style={{ color: "#1A1A1A", letterSpacing: "0.16em" }} className="text-xs font-black uppercase mb-4">Before</div>
+            <h3 style={{ color: "#1A1A1A", fontFamily: "var(--font-serif)", textDecoration: "line-through", textDecorationColor: C.red }} className="text-2xl font-bold mb-6 leading-tight">
+              Still behind the scenes.<br />Still underpaid.
             </h3>
             <div className="flex flex-col gap-3">
               {[
@@ -478,27 +326,19 @@ export default function Home() {
                 "Watching others step into roles you were built for",
                 "The opportunity passes. Someone else takes the seat.",
               ].map((item) => (
-                <div
-                  key={item}
-                  className="text-sm text-white/30 pl-4 border-l border-white/10 font-light leading-snug"
-                >
+                <div key={item} className="flex items-start gap-3 text-sm font-light" style={{ color: "#444", letterSpacing: "0.04em" }}>
+                  <span style={{ color: C.red }} className="mt-0.5 flex-shrink-0">→</span>
                   {item}
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Success */}
-          <div>
-            <div className="text-xs font-medium tracking-widest uppercase text-accent mb-4">
-              With Made For This
-            </div>
-            <h3 className="font-serif text-2xl font-bold text-white mb-5 leading-tight">
-              Customer-facing. Trusted.
-              <br />
-              <span className="italic text-accent">
-                Paid what you&apos;re worth.
-              </span>
+          {/* After */}
+          <div style={{ background: C.cream }} className="p-8">
+            <div style={{ color: C.red, letterSpacing: "0.16em" }} className="text-xs font-black uppercase mb-4">After</div>
+            <h3 style={{ color: "#1A1A1A", fontFamily: "var(--font-serif)" }} className="text-2xl font-bold mb-6 leading-tight">
+              Customer-facing. Trusted.<br /><span style={{ color: C.red }}>Paid what you're worth.</span>
             </h3>
             <div className="flex flex-col gap-3">
               {[
@@ -507,10 +347,8 @@ export default function Home() {
                 "A clear career path with real room to grow into leadership",
                 "The most valuable person in the room. You run the system.",
               ].map((item) => (
-                <div
-                  key={item}
-                  className="text-sm text-white/70 pl-4 border-l-2 border-accent font-light leading-snug"
-                >
+                <div key={item} className="flex items-start gap-3 text-sm font-light" style={{ color: "#444", letterSpacing: "0.04em" }}>
+                  <span style={{ color: C.red }} className="mt-0.5 flex-shrink-0">→</span>
                   {item}
                 </div>
               ))}
@@ -519,109 +357,82 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════
-          REGISTER — StoryBrand Step 5
-          The form. One clear ask.
-      ════════════════════════════════════ */}
-      <section id="register" className="py-24 px-6 md:px-10 bg-surface border-t border-gray-100">
+      {/* ═══ CLOSING PULL QUOTE ═══ */}
+      <section className="px-8 md:px-16 py-24">
+        <div className="max-w-3xl mx-auto">
+          <div style={{ color: C.red, fontFamily: "var(--font-serif)" }} className="text-7xl font-black leading-none mb-6">"</div>
+          <p style={{ color: C.offWhite, fontFamily: "var(--font-serif)", lineHeight: 1.15 }} className="text-3xl md:text-4xl font-bold mb-8">
+            This isn't a HubSpot course. It's a course on how to become the most valuable person in any room that runs on a CRM system.{" "}
+            <span style={{ background: C.yellow, color: "#1A1A1A", padding: "0 4px" }}>
+              And right now, that's almost every room.
+            </span>
+          </p>
+          <p style={{ color: C.red, letterSpacing: "0.12em" }} className="text-sm uppercase font-semibold">
+            Richie Dharma
+          </p>
+          <p style={{ color: C.grey, letterSpacing: "0.10em" }} className="text-xs uppercase mt-1">
+            Head of HubSpot · Diamond Partner Agency · Australia
+          </p>
+        </div>
+      </section>
+
+      {/* ═══ REGISTER ═══ */}
+      <section
+        id="register"
+        style={{ background: C.bgAlt, borderTop: `1px solid rgba(255,255,255,0.06)` }}
+        className="px-8 md:px-16 py-24"
+      >
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-
-          {/* Left — copy */}
           <div>
-            <div className="flex items-center gap-3 mb-5">
-              <span className="w-6 h-px bg-accent" />
-              <span className="text-xs font-medium tracking-widest uppercase text-accent">
-                Founding cohort
-              </span>
+            <div style={{ color: C.gold, letterSpacing: "0.14em" }} className="text-xs uppercase font-medium mb-4 flex items-center gap-3">
+              <span>✦</span> Founding cohort
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-black leading-tight tracking-tight mb-5">
-              You were{" "}
-              <span className="italic text-accent">made for this.</span>
+            <h2 style={{ color: C.red, fontFamily: "var(--font-serif)", letterSpacing: "-0.01em" }} className="text-4xl md:text-5xl font-black uppercase mb-5 leading-tight">
+              You were made<br />
+              <span style={{ color: C.offWhite }}>for this.</span>
             </h2>
-            <p className="text-sm text-muted font-light leading-relaxed mb-6">
+            <p style={{ color: C.grey, letterSpacing: "0.06em" }} className="text-sm font-light leading-relaxed mb-8">
               Register your interest in the Made For This founding cohort.
-              Limited seats. Real skills. A career path that was always waiting
-              for you. You just needed someone to show you the door.
+              Limited seats. Real skills. A career path that was always waiting for you.
+              You just needed someone to show you the door.
             </p>
-
-            <div className="flex flex-col gap-2.5">
+            <div className="flex flex-col gap-3">
               {[
                 "No prior HubSpot experience needed",
                 "Taught by someone actively hiring for this role",
                 "Southeast Asian community. You belong here.",
                 "Founding cohort pricing. The lowest it will ever be.",
               ].map((item) => (
-                <div key={item} className="flex items-center gap-2.5 text-sm text-muted font-light">
-                  <span className="text-accent font-medium">✓</span>
+                <div key={item} className="flex items-center gap-3 text-sm font-light" style={{ color: C.grey, letterSpacing: "0.05em" }}>
+                  <span style={{ color: C.gold }}>✦</span>
                   {item}
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right — HubSpot form */}
-          <div className="bg-white border border-gray-100 rounded-sm p-8 shadow-sm">
-            <div className="text-xs font-medium tracking-widest uppercase text-muted mb-1">
-              Limited seats
-            </div>
-            <h3 className="font-serif text-2xl font-bold text-ink mb-1.5">
+          <div style={{ background: "#232323", border: `1px solid rgba(255,255,255,0.08)` }} className="p-8">
+            <div style={{ color: C.grey, letterSpacing: "0.14em" }} className="text-xs uppercase mb-1">Limited seats</div>
+            <h3 style={{ color: C.offWhite, fontFamily: "var(--font-serif)" }} className="text-2xl font-bold mb-1.5">
               Register your interest
             </h3>
-            <p className="text-sm text-muted font-light mb-6 leading-relaxed">
-              Be first to know when Made For This opens. No spam, just the
-              information you need, when you need it.
+            <p style={{ color: C.grey, letterSpacing: "0.05em" }} className="text-sm font-light mb-6 leading-relaxed">
+              Be first to know when Made For This opens. No spam, just the information you need, when you need it.
             </p>
-
-            {/*
-              ════════════════════════════════════════
-              HUBSPOT FORM EMBED — PASTE YOUR CODE HERE
-              ════════════════════════════════════════
-              Step 1: In HubSpot → Marketing → Forms
-              Step 2: Create or select your enquiry form
-              Step 3: Click "Share" → "Embed code"
-              Step 4: Paste the full <script> embed below,
-                      replacing the placeholder div.
-              The globals.css file already contains
-              overrides to style the form to match.
-              ════════════════════════════════════════
-            */}
             <HubSpotForm />
-
-            <p className="text-xs text-muted text-center mt-4 font-light">
+            <p style={{ color: C.grey, letterSpacing: "0.06em" }} className="text-xs text-center mt-4 font-light">
               No commitment required. No spam. Just opportunity.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════
-          FINAL CTA — Direct. Warm. Personal.
-      ════════════════════════════════════ */}
-      <section className="py-20 px-6 md:px-10 bg-white text-center">
-        <div className="max-w-xl mx-auto">
-          <h2 className="font-serif text-4xl md:text-5xl font-black leading-tight tracking-tight mb-4">
-            It&apos;s our time.
-            <br />
-            <span className="italic text-accent">And I mean that.</span>
-          </h2>
-          <p className="text-sm text-muted font-light leading-relaxed mb-8">
-            We were never behind. We were just never shown the door.
-          </p>
-          <a
-            href="#register"
-            className="inline-block text-xs font-medium tracking-widest uppercase text-white bg-ink px-10 py-4 rounded-sm hover:bg-accent transition-colors duration-200"
-          >
-            Register Your Interest
-          </a>
+      {/* ═══ FOOTER ═══ */}
+      <footer style={{ borderTop: `1px solid rgba(255,255,255,0.08)` }} className="px-8 md:px-16 py-6 flex items-center justify-between">
+        <div style={{ color: C.gold, fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }} className="text-base font-bold whitespace-nowrap">
+          MADE FOR THIS
         </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="border-t border-gray-100 px-6 md:px-10 py-6 flex items-center justify-between bg-white">
-        <div className="font-serif text-base font-bold text-ink">
-          Made For <span className="italic text-accent">This</span>
-        </div>
-        <div className="text-xs text-muted font-light">
+        <div style={{ color: C.grey, letterSpacing: "0.08em" }} className="text-xs uppercase text-right">
           © 2026 Richie Dharma. All rights reserved.
         </div>
       </footer>
