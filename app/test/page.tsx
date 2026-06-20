@@ -209,7 +209,7 @@ export default function TestPage() {
         style={{ background: C.bgAlt, borderTop: `1px solid rgba(255,255,255,0.06)`, borderBottom: `1px solid rgba(255,255,255,0.06)` }}
         className="px-8 md:px-16 py-24"
       >
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
             <div style={{ color: C.gold, letterSpacing: "0.14em" }} className="text-xs uppercase font-medium mb-6 flex items-center gap-3">
               <span>✦</span> Your guide
