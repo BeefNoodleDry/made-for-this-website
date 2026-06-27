@@ -20,7 +20,7 @@ type Slide = {
 const SLIDES: Slide[] = [
   {
     src: "/hubspot/pipeline-map.png",
-    label: "CRM Pipeline Architecture",
+    label: "Customer Journey Map",
     caption: "Map every stage of your customer journey — from first touch to closed won",
   },
   {
