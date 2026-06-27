@@ -138,7 +138,7 @@ export default function EbookPage() {
               style={{
                 background: "#232323",
                 border: `1px solid rgba(201,168,76,0.25)`,
-                aspectRatio: "3/4",
+                aspectRatio: "16/25",
                 width: "100%",
                 maxWidth: "340px",
                 position: "relative",
@@ -188,7 +188,7 @@ export default function EbookPage() {
                 src="/ebook-cover.jpg"
                 alt="Made For This — Career Accelerator ebook"
                 fill
-                className="object-contain"
+                className="object-cover"
                 quality={90}
               />
             </div>
