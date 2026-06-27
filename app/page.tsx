@@ -216,7 +216,7 @@ export default function Home() {
             <span>✦</span> The platform
           </div>
           <h2 style={{ color: C.red, fontFamily: "var(--font-serif)", letterSpacing: "-0.01em" }} className="text-4xl md:text-5xl font-bold mb-4 leading-tight max-w-2xl">
-            It looks complex. It isn't. It's just deep.
+            The tool isn't the hard part. Knowing what to do with it is.
           </h2>
           <p style={{ color: C.grey, letterSpacing: "0.07em", maxWidth: "560px" }} className="text-sm font-light leading-relaxed mb-12">
             Whether you've never opened HubSpot or you use it every day, this course meets you where you are.
