@@ -53,17 +53,16 @@ export default function ThankYouPage() {
             style={{ color: C.red, fontFamily: "var(--font-serif)", letterSpacing: "-0.02em", lineHeight: 1 }}
             className="text-5xl md:text-6xl font-black mb-6"
           >
-            Check your inbox.
+            Your guide is ready.
             <br />
-            <span style={{ color: C.offWhite }}>And here's your copy.</span>
+            <span style={{ color: C.offWhite }}>Click below to download.</span>
           </h1>
 
           <p
             style={{ color: C.grey, letterSpacing: "0.06em", maxWidth: "480px" }}
             className="text-sm font-light leading-relaxed mb-10"
           >
-            The guide is downloading now. If it doesn't start automatically,
-            tap the button below.
+            Tap the button below to get your copy of the Made For This career guide.
           </p>
 
           <a
