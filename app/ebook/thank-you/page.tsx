@@ -22,8 +22,8 @@ export default function ThankYouPage() {
   return (
     <main style={{ background: C.bg, color: C.offWhite }} className="overflow-x-hidden min-h-screen flex flex-col">
 
-      {/* Hidden auto-download trigger */}
-      <a ref={linkRef} href="/ebook.pdf" download aria-hidden="true" className="hidden" />
+      {/* Hidden auto-download="Made For This Academy eBook" trigger */}
+      <a ref={linkRef} href="/ebook.pdf" download="Made For This Academy eBook" aria-hidden="true" className="hidden" />
 
       {/* ═══ NAV ═══ */}
       <nav
@@ -55,7 +55,7 @@ export default function ThankYouPage() {
           >
             Your guide is ready.
             <br />
-            <span style={{ color: C.offWhite }}>Click below to download.</span>
+            <span style={{ color: C.offWhite }}>Click below to download="Made For This Academy eBook".</span>
           </h1>
 
           <p
@@ -67,7 +67,7 @@ export default function ThankYouPage() {
 
           <a
             href="/ebook.pdf"
-            download
+            download="Made For This Academy eBook"
             style={{ background: C.red, color: C.offWhite, letterSpacing: "0.12em" }}
             className="inline-block text-xs font-semibold uppercase px-8 py-4 hover:opacity-90 transition-opacity"
           >
