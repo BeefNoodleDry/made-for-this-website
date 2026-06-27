@@ -188,7 +188,7 @@ export default function EbookPage() {
                 src="/ebook-cover.jpg"
                 alt="Made For This — Career Accelerator ebook"
                 fill
-                className="object-cover"
+                className="object-contain"
                 quality={90}
               />
             </div>
