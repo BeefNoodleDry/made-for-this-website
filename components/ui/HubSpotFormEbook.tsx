@@ -16,6 +16,7 @@ export default function HubSpotFormEbook() {
               formId: "d01fd1d9-1159-491a-93db-de0b4c3d1147",
               region: "ap1",
               target: "#hubspot-ebook-form-target",
+              redirectUrl: "https://richiedharma.com/ebook/thank-you",
             });
           }
         }}
