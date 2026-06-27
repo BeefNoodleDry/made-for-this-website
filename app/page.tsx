@@ -1,5 +1,6 @@
 import HubSpotForm from "@/components/ui/HubSpotForm";
 import Image from "next/image";
+import PlatformSlider from "@/components/ui/PlatformSlider";
 
 // ─────────────────────────────────────────────
 // DESIGN SYSTEM — MadeForThis_DesignPrinciples.md
@@ -200,6 +201,47 @@ export default function Home() {
               title="The opportunity was never shown to you"
               body="HubSpot PM is one of the most in-demand, highest-paid remote roles in the world right now. Most people in your position have never heard of it."
             />
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ PLATFORM ═══ */}
+      <section
+        id="platform"
+        style={{ background: C.bgAlt, borderTop: `1px solid rgba(255,255,255,0.06)`, borderBottom: `1px solid rgba(255,255,255,0.06)` }}
+        className="px-8 md:px-16 py-24"
+      >
+        <div className="max-w-5xl mx-auto">
+          <div style={{ color: C.gold, letterSpacing: "0.14em" }} className="text-xs uppercase font-medium mb-4 flex items-center gap-3">
+            <span>✦</span> The platform
+          </div>
+          <h2 style={{ color: C.red, fontFamily: "var(--font-serif)", letterSpacing: "-0.01em" }} className="text-4xl md:text-5xl font-bold mb-4 leading-tight max-w-2xl">
+            It looks complex. It isn't. It's just deep.
+          </h2>
+          <p style={{ color: C.grey, letterSpacing: "0.07em", maxWidth: "560px" }} className="text-sm font-light leading-relaxed mb-12">
+            Whether you've never opened HubSpot or you use it every day, this course meets you where you are.
+          </p>
+
+          <PlatformSlider />
+
+          {/* Two-column audience copy */}
+          <div className="grid md:grid-cols-2 gap-8 mt-16" style={{ borderTop: `1px solid rgba(255,255,255,0.06)`, paddingTop: "40px" }}>
+            <div>
+              <div style={{ color: C.offWhite, letterSpacing: "0.1em" }} className="text-xs uppercase font-semibold mb-3">
+                Never used HubSpot?
+              </div>
+              <p style={{ color: C.grey, letterSpacing: "0.06em" }} className="text-sm font-light leading-relaxed">
+                You'll learn from zero. The course is structured around what actually matters in the real world, not every feature in the platform. There is a learning curve. We won't pretend otherwise. But you'll be working on real applications from day one, and dangerous within weeks.
+              </p>
+            </div>
+            <div>
+              <div style={{ color: C.offWhite, letterSpacing: "0.1em" }} className="text-xs uppercase font-semibold mb-3">
+                Already know HubSpot?
+              </div>
+              <p style={{ color: C.grey, letterSpacing: "0.06em" }} className="text-sm font-light leading-relaxed">
+                Most people who use HubSpot use 20% of it. This course covers the 20% that makes you irreplaceable. The part that touches revenue, clients, and decisions. You'll stop being the person who maintains the CRM. You'll become the person who owns it.
+              </p>
+            </div>
           </div>
         </div>
       </section>
