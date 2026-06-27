@@ -55,7 +55,7 @@ export default function ThankYouPage() {
           >
             Your guide is ready.
             <br />
-            <span style={{ color: C.offWhite }}>Click below to download="Made For This Academy eBook".</span>
+            <span style={{ color: C.offWhite }}>Click below to download your Made For This Academy eBook.</span>
           </h1>
 
           <p
