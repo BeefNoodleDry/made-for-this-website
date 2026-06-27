@@ -185,7 +185,7 @@ export default function EbookPage() {
               </div>
               {/* Real cover image — drop public/ebook-cover.png to activate */}
               <Image
-                src="/ebook-cover.png"
+                src="/ebook-cover.jpg"
                 alt="Made For This — Career Accelerator ebook"
                 fill
                 className="object-cover"
