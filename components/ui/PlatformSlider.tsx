@@ -19,34 +19,24 @@ type Slide = {
 
 const SLIDES: Slide[] = [
   {
-    src: "/hubspot/deals-pipeline.png",
-    label: "Deals Pipeline",
-    caption: "Manage every client opportunity in one place",
+    src: "/hubspot/pipeline-map.png",
+    label: "CRM Pipeline Architecture",
+    caption: "Map every stage of your customer journey — from first touch to closed won",
   },
   {
     src: "/hubspot/workflow-automation.png",
     label: "Workflow Automation",
-    caption: "Build automations that run while you sleep",
+    caption: "Build logic-driven automations that run your business while you sleep",
   },
   {
     src: "/hubspot/contact-records.png",
     label: "Contact & Company Records",
-    caption: "The source of truth for every relationship",
+    caption: "The single source of truth for every client relationship",
   },
   {
-    src: "/hubspot/email-sequences.png",
-    label: "Email Sequences",
-    caption: "Personalised outreach at scale",
-  },
-  {
-    src: "/hubspot/reports-dashboards.png",
-    label: "Reports & Dashboards",
-    caption: "Show leadership what's actually working",
-  },
-  {
-    src: "/hubspot/project-management.png",
-    label: "Project Management Views",
-    caption: "Own the delivery, not just the data",
+    src: "/hubspot/campaign-management.png",
+    label: "Campaign Management",
+    caption: "Own the full campaign — from brief to published assets to conversion data",
   },
 ];
 
